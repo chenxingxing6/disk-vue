@@ -20,6 +20,8 @@
 </body>
 </html>
 ```
+
+---
 2.main.js配置，改变id="app"的内容
 ```js
 new Vue({
@@ -31,6 +33,7 @@ new Vue({
 })
 ```
 
+---
 3.App.vue组件
 ```html
 <template>
@@ -45,6 +48,8 @@ new Vue({
 </script>
 ```
 
+
+---
 4.router/index.js 
 ```js
 const mainRoutes = {
