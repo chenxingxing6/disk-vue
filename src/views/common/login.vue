@@ -99,7 +99,7 @@
           username: '',
           password: '',
           uuid: '',
-          captcha: '',
+          captcha: ''
         },
         captchaPath: ''
       }
@@ -110,15 +110,15 @@
     methods: {
       // 提交表单
       dataFormSubmit () {
-        if (this.username == null || this.username == '') {
+        if (this.username === null || this.username === '') {
           this.$message.warning('账号不能为空')
           return false
         }
-        if (this.password == null || this.password == '') {
+        if (this.password === null || this.password === '') {
           this.$message.warning('密码不能为空')
           return false
         }
-        if (this.captcha == null || this.captcha == '') {
+        if (this.captcha === null || this.captcha === '') {
           this.$message.warning('验证码不能为空')
           return false
         }
@@ -146,7 +146,7 @@
       getCaptcha () {
         this.uuid = getUUID()
         this.captchaPath = this.$http.adornUrl(`/captcha.jpg?uuid=${this.uuid}`)
-      },
+      }
     }
   }
 </script>

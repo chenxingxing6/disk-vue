@@ -9,21 +9,16 @@ import '@/element-ui-theme'
 import '@/assets/scss/index.scss'
 import httpRequest from '@/utils/httpRequest' // api: https://github.com/axios/axios
 import cloneDeep from 'lodash/cloneDeep'
-
 Vue.use(VueCookie)
 Vue.config.productionTip = false
-
 // 非生产环境, 适配mockjs模拟数据                 // api: https://github.com/nuysoft/Mock
 if (process.env.NODE_ENV !== 'production') {
   require('@/mock')
 }
-
 // 挂载全局
 Vue.prototype.$http = httpRequest // ajax请求方法
-
 // 保存整站vuex本地储存初始状态
 window.SITE_CONFIG['storeState'] = cloneDeep(store.state)
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

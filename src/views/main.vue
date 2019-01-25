@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="body-bg">
   <div
     class="site-wrapper"
     :class="{ 'site-sidebar--fold': sidebarFold }"
@@ -86,3 +86,10 @@
     }
   }
 </script>
+
+<style scoped>
+  .site-content {
+    position: relative;
+    padding: 0px;
+  }
+</style>

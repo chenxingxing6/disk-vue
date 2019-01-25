@@ -19,6 +19,7 @@
             <li><router-link to="disk"><span class="glyphicon glyphicon-file"></span>&nbsp;&nbsp;网盘</router-link></li>
             <li><router-link to="share"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;分享</router-link></li>
             <li><router-link to="findresource"><span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;找资源</router-link></li>
+            <li><router-link to="attention"><span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;关注用户</router-link></li>
             <li><router-link to="more"><span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;更多</router-link></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
