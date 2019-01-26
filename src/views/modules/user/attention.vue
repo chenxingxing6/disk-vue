@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!--导航-->
     <div class="container">
       <div class="row">
         <div class="input-group">
@@ -8,6 +7,18 @@
           <span class="input-group-btn">
                         <button type="button" class="btn btn btn-primary"> <i class="fa fa-search"></i> 搜索</button>
                     </span>
+        </div>
+        <div class="col-md-12 a-center" style="margin-top: 20px;">
+          <div class="panel panel-default">
+            <div class="panel-heading">已关注的用户</div>
+            <div class="panel-body">
+              <el-row :gutter="10">
+                <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="4"><div class="grid-content bg-purple"></div></el-col>
+                <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="20"><div class="grid-content bg-purple-light"></div></el-col>
+              </el-row>
+
+            </div>
+          </div>
         </div>
         <div class="col-md-12 a-center" style="margin-top: 20px;">
           <div class="panel panel-default">
@@ -403,5 +414,21 @@
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
   }
 </style>

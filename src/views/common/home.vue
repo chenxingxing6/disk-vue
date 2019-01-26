@@ -3,15 +3,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="alert alert-danger alert-dismissible fade in" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-          <h4>网站程序有漏洞，急需修复！</h4>
-          <p>当前版本程序(V1.22)存在严重安全问题，容易造成攻击，请即可修复！</p>
-          <p>
-            <button type="button" class="btn btn-danger">立即修复</button>
-            <button type="button" class="btn btn-default"  data-dismiss="alert"  >稍后处理</button>
-          </p>
-        </div>
+        <el-carousel :interval="5000" arrow="always">
+          <el-carousel-item v-for="item in items" :key="item">
+            <img width="100%" height="100%" :src="item.url"/>
+          </el-carousel-item>
+        </el-carousel>
+        <br>
       </div>
       <div class="col-md-6">
         <div class="panel panel-default">
@@ -19,19 +16,23 @@
           <div class="panel-body">
             <p>内存使用率：40%</p>
             <div class="progress">
-              <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
+              <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40"
+                   aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
             </div>
             <p>数据库使用率：20%</p>
             <div class="progress">
-              <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div>
+              <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20"
+                   aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div>
             </div>
             <p>磁盘使用率：60%</p>
             <div class="progress">
-              <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>
+              <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60"
+                   aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>
             </div>
             <p>CPU使用率：80%</p>
             <div class="progress">
-              <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+              <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80"
+                   aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
             </div>
           </div>
         </div>
@@ -106,10 +107,15 @@
                 <div class="panel-heading">团队联系手册</div>
                 <div class="panel-body">
                   <ul class="list-group">
-                    <li class="list-group-item">站长(李小龙)：<span class="glyphicon glyphicon-phone"></span>&nbsp;&nbsp;13134848615</li>
-                    <li class="list-group-item">技术(大牛哥)：<span class="glyphicon glyphicon-phone"></span>&nbsp;&nbsp;13456127694</li>
-                    <li class="list-group-item">推广(张二哥)：<span class="glyphicon glyphicon-phone"></span>&nbsp;&nbsp;13457815482</li>
-                    <li class="list-group-item">客服(王女士)：<span class="glyphicon glyphicon-phone"></span>&nbsp;&nbsp;13134567782&nbsp;&nbsp;<span class="glyphicon glyphicon-phone-alt"></span>&nbsp;&nbsp;028-888888</li>
+                    <li class="list-group-item">站长(李小龙)：<span class="glyphicon glyphicon-phone"></span>&nbsp;&nbsp;13134848615
+                    </li>
+                    <li class="list-group-item">技术(大牛哥)：<span class="glyphicon glyphicon-phone"></span>&nbsp;&nbsp;13456127694
+                    </li>
+                    <li class="list-group-item">推广(张二哥)：<span class="glyphicon glyphicon-phone"></span>&nbsp;&nbsp;13457815482
+                    </li>
+                    <li class="list-group-item">客服(王女士)：<span class="glyphicon glyphicon-phone"></span>&nbsp;&nbsp;13134567782&nbsp;&nbsp;<span
+                      class="glyphicon glyphicon-phone-alt"></span>&nbsp;&nbsp;028-888888
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -124,12 +130,36 @@
 
 <script>
   export default {
+    data () {
+      return {
+        items: [
+          {url: 'https://assets.2dfire.com/frontend/4b97f6194ce25108d9f0dc5d9a69d1ad.png'},
+          {url: 'https://assets.2dfire.com/frontend/dd946ed55ed15c1de012ee0b4faf1fd5.png'},
+          {url: 'https://assets.2dfire.com/frontend/eaa447fee8e265293058831aa1e69498.jpg'}]
+      }
+    }
   }
 </script>
 
 <style>
   .mod-home {
     line-height: 1.5;
+  }
+
+  .el-carousel__item h3 {
+    color: #475669;
+    font-size: 18px;
+    opacity: 0.75;
+    line-height: 300px;
+    margin: 0;
+  }
+
+  .el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+  }
+
+  .el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
   }
 </style>
 
