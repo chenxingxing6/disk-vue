@@ -1,3 +1,4 @@
+<!--
 <template>
   <div class="mod-demo-echarts">
     <el-alert
@@ -470,3 +471,4 @@
     }
   }
 </style>
+-->

@@ -75,24 +75,3 @@
   <!-- 主体 -->
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        activeNames: ['1']
-      };
-    },
-    methods: {
-      handleChange(val) {
-        console.log(val);
-      }
-    }
-  }
-</script>
-
-<style>
-  .mod-home {
-    line-height: 1.5;
-  }
-</style>
-
