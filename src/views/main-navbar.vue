@@ -86,8 +86,8 @@
           type: 'warning'
         }).then(() => {
           this.$http({
-            url: this.$http.adornUrl('/sys/logout'),
-            method: 'post',
+            url: this.$http.adornUrl('/api/logout'),
+            method: 'get',
             data: this.$http.adornData()
           }).then(({data}) => {
             if (data && data.code === 0) {

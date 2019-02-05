@@ -30,18 +30,6 @@
                   <input type="password" class="form-control" placeholder="密码" v-model="password">
                 </div>
               </div>
-              <div class="form-group">
-                <div class="input-group" style="float: left;width: 195px;">
-                  <div class="input-group-addon">
-                    <i class="fa fa-check-square"></i>
-                  </div>
-                  <input type="text" v-model="captcha" class="form-control" style="width: 150px" maxlength="5"
-                         placeholder="验证码">&nbsp;
-                </div>
-                <img style="width: 140px;height: 35px;display: inline-block;float: right" title="点击换一张"
-                     :src="captchaPath" @click="getCaptcha()">
-                <div class="clearfix"></div>
-              </div>
               <div class="checkbox">
                 <a href="find_password.html" style="display: inline-block;float: right">忘记密码？</a>
               </div>
@@ -94,25 +82,18 @@
 
 <script>
   import {getUUID} from '@/utils'
-
   export default {
     data () {
       return {
-        dataForm: {
           username: '',
           password: '',
-          uuid: '',
-          captcha: ''
-        },
-        captchaPath: ''
+          uuid: ''
       }
-    },
-    created () {
-      this.getCaptcha()
     },
     methods: {
       // 提交表单
       dataFormSubmit () {
+        console.log(this.username)
         if (this.username === null || this.username === '') {
           this.$message.warning('账号不能为空')
           return false
@@ -121,34 +102,22 @@
           this.$message.warning('密码不能为空')
           return false
         }
-        if (this.captcha === null || this.captcha === '') {
-          this.$message.warning('验证码不能为空')
-          return false
-        }
         this.$http({
-          url: this.$http.adornUrl('/sys/login'),
+          url: this.$http.adornUrl('/api/login'),
           method: 'post',
           data: this.$http.adornData({
             'username': this.username,
             'password': this.password,
             'uuid': this.uuid,
-            'captcha': this.captcha
           })
         }).then(({data}) => {
           if (data && data.code === 0) {
             this.$cookie.set('token', data.token)
             this.$router.replace({name: 'home'})
           } else {
-            this.getCaptcha()
             this.$message.error(data.msg)
-            this.captcha = ''
           }
         })
-      },
-      // 获取验证码
-      getCaptcha () {
-        this.uuid = getUUID()
-        this.captchaPath = this.$http.adornUrl(`/captcha.jpg?uuid=${this.uuid}`)
       }
     }
   }
