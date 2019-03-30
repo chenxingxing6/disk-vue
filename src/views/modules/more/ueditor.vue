@@ -1,3 +1,4 @@
+<!--
 <template>
   <div class="mod-demo-ueditor">
     <el-alert
@@ -11,8 +12,8 @@
     </el-alert>
 
     <script :id="ueId" class="ueditor-box" type="text/plain" style="width: 100%; height: 260px;">hello world!</script>
-    
-    <!-- 获取内容 -->
+
+    &lt;!&ndash; 获取内容 &ndash;&gt;
     <p><el-button @click="getContent()">获得内容</el-button></p>
     <el-dialog
       title="内容"
@@ -63,3 +64,4 @@
     }
   }
 </style>
+-->

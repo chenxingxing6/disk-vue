@@ -1,8 +1,8 @@
 {
-  "name": "renren-fast-vue",
-  "version": "1.2.2",
-  "description": "renren-fast-vue基于vue、element-ui构建开发，实现renren-fast后台管理前端功能，提供一套更优的前端解决方案。",
-  "author": "daxiong.yang <daxiong.yang@qq.com>",
+  "name": "disk-vue",
+  "version": "1.0.0",
+  "description": "分布式网盘系统",
+  "author": "lanxinghua@2dfire.com",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

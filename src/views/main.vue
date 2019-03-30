@@ -73,7 +73,7 @@
       getUserInfo () {
         this.loading = false
         this.$http({
-          url: this.$http.adornUrl('/sys/user/info'),
+          url: this.$http.adornUrl('/api/user/info'),
           method: 'get',
           params: this.$http.adornParams()
         }).then(({data}) => {
